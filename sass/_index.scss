@@ -1,0 +1,259 @@
+/*------------------------------------------------*/
+/*----------------- M O B I L E ------------------*/
+/*------------------------------------------------*/
+
+@import "./mixins";
+
+/*---------- BASE ----------*/
+
+.container {
+  max-width: 425px;
+  margin: auto;
+}
+
+a {
+  color: #353535;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+img {
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: 700;
+  padding: 0.3em;
+}
+
+h2 {
+  font-size: 1.7em;
+  font-weight: 700;
+  padding: 0.5em 0;
+}
+
+p {
+  font-size: 1.2em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+
+$first-color: #9356DC;
+$second-color: #FF79DA;
+$third-color: #99E2D0;
+$first-back-color: #FFF;
+$second-back-color: rgb(241, 241, 241);
+$grey-accent-color: #3f3f3f;
+$gradient-color-redpurple: linear-gradient(to bottom, #9356DC 0%, #FF79DA 100%);
+$box-shadow:0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+
+
+/*---------- HEADER ----------*/
+
+.logo_title {
+  display: flex;
+  justify-content: center;
+  background-color: $first-back-color;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 100;
+}
+
+/*---------- GENERAL ----------*/
+
+$padding-bloc: 1.5em;
+
+.home,
+.how_to,
+.restaurants {
+  padding: $padding-bloc;
+}
+
+/*---------- LOCATION ----------*/
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: rgb(228, 228, 228);
+  height: 3.6em;
+  color: $grey-accent-color;
+
+  &_icon {
+    margin-right: 1rem;
+  }
+
+  &_text {
+    font-weight: bolder;
+  }
+}
+
+/*---------- MENU ----------*/
+
+.home {
+  text-align: center;
+  background-color: $second-back-color;
+
+  &_title {
+    margin-top: 0;
+  }
+
+  &_text {
+    font-weight: lighter;
+    padding-bottom: 1rem;
+  }
+}
+
+
+.home_btn {
+  border-radius: 5rem 5rem;
+  padding: 1rem 1rem;
+  background-image: $gradient-color-redpurple;
+  color: white;
+  border: none;
+  box-shadow: $box-shadow;
+  font-size: 1em;
+}
+
+/*---------- HOW TO ----------*/
+
+.how_to {
+
+  li {
+    @include flex-around;
+    background-color: $first-back-color;
+    box-shadow: $box-shadow;
+    border-radius: 1.25rem;
+    padding: 0.4rem;
+    margin: 0 0 1.5rem 0;
+    position: relative;
+  }
+
+  &_icon {
+    color: $grey-accent-color;
+    padding-left: 1.5rem;
+  }
+
+  &_text {
+    margin-right: 2rem;
+    font-weight: bolder;
+  }
+
+  &_count {
+    @include flex-center;
+    background-color: $first-color;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 2rem;
+    color: white;
+    position: absolute;
+    left: 0;
+  }
+}
+
+/*---------- RESTAURANTS ----------*/
+.restaurants {
+  background-color: $second-back-color;
+}
+
+.bloc_cards {
+  @include flex-center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cards {
+  width: 100%;
+  height: auto;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 10rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  p {
+    font-size: 1em;
+    margin: 0.25em;
+  }
+
+  a {
+    text-decoration: none;
+    background-color: #f6f6f6;
+  }
+
+  .cards_desc {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: $box-shadow;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+}
+
+.new_cards {
+  position: absolute;
+  right: 5%;
+  background-color: $third-color;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.1rem;
+  color: darkgreen;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75em;
+}
+
+.cards_btn {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  transition: all ease-in 1s;
+
+  .fa-heart {
+    background-color: transparent;
+    font-size: 2em;
+  }
+}
+
+/* ------- FOOTER ------- */
+
+.footer {
+  background-color: $grey-accent-color;
+  padding: 0.3rem 1rem;
+
+  &_logo {
+    color: white;
+    font-family: 'Shrikhand', 'cursive';
+  }
+
+  &_display {
+    padding-bottom: 10px;
+  }
+
+  a {
+    color: #FFF;
+  }
+
+  &_icon {
+    margin-right: 0.5rem;
+    width: 1.2rem;
+  }
+}
